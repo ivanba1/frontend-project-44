@@ -1,26 +1,40 @@
 {
-  "name": "@hexlet/code",
-  "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/ivanba1/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ivanba1/frontend-project-44/actions)",
-  "main": "index.js",
-  "type": "module",
-  "bin": {
-    "brain-games": "bin/brain-games.js"
+  "name": "readline-sync",
+  "version": "1.4.10",
+  "title": "readlineSync",
+  "description": "Synchronous Readline for interactively running to have a conversation with the user via a console(TTY).",
+  "keywords": [
+    "readline",
+    "synchronous",
+    "interactive",
+    "prompt",
+    "question",
+    "password",
+    "cli",
+    "tty",
+    "command",
+    "repl",
+    "keyboard",
+    "wait",
+    "block"
+  ],
+  "main": "./lib/readline-sync.js",
+  "files": [
+    "lib/*.@(js|ps1|sh)",
+    "README-Deprecated.md"
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "homepage": "https://github.com/anseki/readline-sync",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivanba1/frontend-project-44.git"
+    "url": "git://github.com/anseki/readline-sync.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ivanba1/frontend-project-44/issues"
-  },
-  "homepage": "https://github.com/ivanba1/frontend-project-44#readme",
-  "dependencies": {
-    "readline-sync": "^1.4.10"
+  "bugs": "https://github.com/anseki/readline-sync/issues",
+  "license": "MIT",
+  "author": {
+    "name": "anseki",
+    "url": "https://github.com/anseki"
   }
 }
