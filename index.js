@@ -1,8 +1,3 @@
-import readlineSync from 'readline-sync';
+import cli from './src/cli.js';
 
-const greetingMessege = () => {
-    const name = readlineSync.question('May I have your name? ');
-
-    console.log(`Hi, ${name}`)
-};
-export { greetingMessege }
+export default cli;
