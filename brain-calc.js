@@ -1,25 +1,43 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-function isEven(number) {
-  return number % 2 === 0;
-}
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-function braingame() {
+const calculate = (num1, num2, operator) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      return NaN; 
+  }
+};
+
+const brainCalc = () => {
+  console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log('What is the result of the expression?');
 
-  let correctpoint = 0;
-  while (correctpoint < 3) {
-    const randomNumber = Math.floor(Math.random() * 100) + 1;
-    console.log(`Question: ${randomNumber}`);
+  const operators = ['+', '-', '*'];
+  let correctAnswersCount = 0;
+
+  while (correctAnswersCount < 3) {
+    const num1 = getRandomNumber(1, 20); 
+    const num2 = getRandomNumber(1, 20);
+    const operator = operators[getRandomNumber(0, operators.length - 1)];
+    const question = `${num1} ${operator} ${num2}`;
+    const correctAnswer = calculate(num1, num2, operator).toString(); 
+
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
 
-    if (userAnswer.length === correctAnswer.length) {
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      correctpoint += 1;
+      correctAnswersCount++;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
@@ -28,6 +46,7 @@ function braingame() {
   }
 
   console.log(`Congratulations, ${name}!`);
-}
+};
 
-braingame();
+brainCalc();
+
