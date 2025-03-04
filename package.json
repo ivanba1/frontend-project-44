@@ -1,40 +1,43 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/ivanba1/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ivanba1/frontend-project-44/actions)",
-  "main": "index.js",
   "type": "module",
+  "description": "[![Actions Status](https://github.com/motya-creat/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/motya-creat/frontend-project-44/actions)",
+  "main": "index.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
-    "brain-calc.js": "bin/brain-calc.js"
+    "brain-calc": "bin/brain-calc.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivanba1/frontend-project-44.git"
+    "url": "git+https://github.com/motya-creat/frontend-project-44.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ivanba1/frontend-project-44/issues"
+    "url": "https://github.com/motya-creat/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/ivanba1/frontend-project-44#readme",
+  "homepage": "https://github.com/motya-creat/frontend-project-44#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "@eslint/create-config": "^1.0.0",
-    "@eslint/eslintrc": "^3.3.0",
-    "@eslint/js": "^9.21.0",
-    "eslint": "^8.57.1",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "globals": "^16.0.0"
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.7.0",
+    "@jest/globals": "^29.7.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "globals": "^15.8.0",
+    "jest": "^29.7.0",
+    "jest-cli": "^29.7.0",
+    "lint-staged": "^15.2.7",
+    "npm-check-updates": "^16.14.20",
+    "simple-git-hooks": "^2.11.1"
   }
 }

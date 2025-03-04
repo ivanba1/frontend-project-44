@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import cli from '../index.js';
+import { greetingMessage } from '../src/cli';
+const name = greetingMessage()
 
-console.log('Welcome to the Brain Games!');
-
-cli();

@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-
+import { greetingMessage } from '../src/cli';
 function isEven(number) {
   return number % 2 === 0;
 }
 
 function braingame() {
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+  const name = greetingMessage()
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   let correctpoint = 0;
@@ -17,17 +16,11 @@ function braingame() {
     const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
 
-    if (userAnswer.length === correctAnswer.length) {
-      console.log('Correct!');
-      correctpoint += 1;
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-  }
+    const cov =end()
+    return cov;
+  };
 
   console.log(`Congratulations, ${name}!`);
-}
+};
 
 braingame();
