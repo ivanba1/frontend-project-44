@@ -1,7 +1,37 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { greetingMessage } from '../src/cli';
+import { end, greetingMessage } from '../src/cli.js';
 
-function brainGcd (){
-const name = greetingMessage ();
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+const gcd = (a, b) => {
+  while (b) {
+    const temp = b;
+    b = a % b;
+    a = temp;
+  }
+  return a;
 };
+
+function brainGcd() {
+  const name = greetingMessage();
+  console.log('Find the greatest common divisor of given numbers.');
+
+  const correctAnswersCount = 0;
+
+  while (correctAnswersCount < 3) {
+    const num1 = getRandomNumber(1, 100);
+    const num2 = getRandomNumber(1, 100);
+    const question = `${num1} ${num2}`;
+    const correctAnswer = gcd(num1, num2).toString();
+
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    const cov = end();
+    return cov;
+  }
+
+  console.log(`Congratulations, ${name}!`);
+}
+brainGcd();
