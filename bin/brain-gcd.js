@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { end, greetingMessage } from '../src/cli.js';
+import { greetingMessage } from '../src/cli.js';
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -27,9 +27,13 @@ function brainGcd() {
 
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-
-    const cov = end();
-    return cov;
+    if (userAnswer.length === correctAnswer.length) {
+        console.log('Correct!');
+        correctAnswersCount += 1;
+      } else {
+        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+        console.log(`Let's try again, ${name}!`);
+      }
   }
 
   console.log(`Congratulations, ${name}!`);
