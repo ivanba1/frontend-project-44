@@ -22,9 +22,9 @@ function brainPrime() {
 
     while (correctAnswers < totalQuestions) {
         const randomNumber = Math.floor(Math.random() * 100) + 1; 
-        const correctAnswer = isPrime(randomNumber) ? "yes" : "no";
+        const correctAnswer = isEven(randomNumber) ? "yes" : "no";
 
-        const userAnswer = prompt(`Question: ${randomNumber}\nYour answer:`);
+        const userAnswer = readlineSync.question(`Question: ${randomNumber}\nYour answer:`);
 
         if (userAnswer === null) {
             console.log("Okay, maybe next time!");
