@@ -6,9 +6,7 @@ const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)
 
 const gcd = (a, b) => {
   while (b) {
-    const temp = b;
-    b = a % b;
-    a = temp;
+    const temp = b; b = a % b; a = temp;
   }
   return a;
 };
@@ -28,12 +26,12 @@ function brainGcd() {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer.length === correctAnswer.length) {
-        console.log('Correct!');
-        correctAnswersCount += 1;
-      } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-        console.log(`Let's try again, ${name}!`);
-      }
+      console.log('Correct!');
+      correctAnswersCount += 1;
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
+    }
   }
 
   console.log(`Congratulations, ${name}!`);

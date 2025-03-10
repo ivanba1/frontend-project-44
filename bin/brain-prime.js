@@ -1,39 +1,40 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import { greetingMessage } from '../src/cli.js';
+
 function isPrime(number) {
-    if (number <= 1) {
-        return false;
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
+      return false;
     }
-    for (let i = 2; i <= Math.sqrt(number); i++) {
-        if (number % i === 0) {
-            return false;
-        }
-    }
-    return true;
+  }
+  return true;
 }
 
 function brainPrime() {
-   const name = greetingMessage();
-    console.log('Answer "yes" if the given number is prime. Otherwise answer "no".');
+  const name = greetingMessage();
+  console.log('Answer "yes" if the given number is prime. Otherwise answer "no".');
 
-    let correctAnswers = 0;
-    const totalQuestions = 3;
+  const correctAnswers = 0;
+  const totalQuestions = 3;
 
-    while (correctAnswers < totalQuestions) {
-        const randomNumber = Math.floor(Math.random() * 100) + 1; 
-        const correctAnswer = isEven(randomNumber) ? "yes" : "no";
+  while (correctAnswers < totalQuestions) {
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
 
-        const userAnswer = readlineSync.question(`Question: ${randomNumber}\nYour answer:`);
+    const userAnswer = readlineSync.question(`Question: ${randomNumber}\nYour answer:`);
 
-        if (userAnswer === null) {
-            console.log("Okay, maybe next time!");
-            return;
-        }
+    if (userAnswer === null) {
+      console.log('Okay, maybe next time!');
+      return;
+    }
 
-        const userAnswerLower = userAnswer.toLowerCase(); 
+    const userAnswerLower = userAnswer.toLowerCase();
 
-        if (userAnswer.length === correctAnswer.length) {
+    if (userAnswer.length === correctAnswer.length) {
       console.log('Correct!');
       correctAnswersCount += 1;
     } else {
@@ -44,6 +45,5 @@ function brainPrime() {
 
   console.log(`Congratulations, ${name}!`);
 }
-  
-brainPrime();
 
+brainPrime();

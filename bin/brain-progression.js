@@ -3,32 +3,33 @@ import readlineSync from 'readline-sync';
 import { greetingMessage } from '../src/cli.js';
 
 function brainProgression() {
-   const name = greetingMessage();
-  let correctAnswers = 0;
+  const name = greetingMessage();
+  const correctAnswers = 0;
   const totalQuestions = 3;
 
   while (correctAnswers < totalQuestions) {
-    const length = Math.floor(Math.random() * 6) + 5; 
-    const start = Math.floor(Math.random() * 20) + 1;   
-    const step = Math.floor(Math.random() * 5) + 1;    
+    const length = Math.floor(Math.random() * 6) + 5;
+    const start = Math.floor(Math.random() * 20) + 1;
+    const step = Math.floor(Math.random() * 5) + 1;
 
-    const progression = Array.from({ length: length }, (_, i) => start + i * step);
+    const progression = Array.from({ length }, (_, i) => start + i * step);
     const hiddenIndex = Math.floor(Math.random() * length);
     const hiddenValue = progression[hiddenIndex];
-    progression[hiddenIndex] = "..";
+    progression[hiddenIndex] = '..';
 
-    const question = progression.join(" ");
-    const userAnswer = isEven(`Question: ${question}\nYour answer:`);
+    const question = progression.join(' ');
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === null) { 
-      console.log("Okay, maybe next time!");
+    if (userAnswer === null) {
+      console.log('Okay, maybe next time!');
       return;
     }
 
-    const userAnswerNum = parseInt(userAnswer, 10); 
+    const userAnswerNum = parseInt(userAnswer, 10);
     if (isNaN(userAnswerNum)) {
-      console.log("Invalid input. Please enter a number.");
-      continue; 
+      console.log('Invalid input. Please enter a number.');
+      continue;
     }
 
     if (userAnswer.length === correctAnswer.length) {
