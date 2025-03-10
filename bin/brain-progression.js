@@ -18,7 +18,7 @@ function brainProgression() {
     progression[hiddenIndex] = "..";
 
     const question = progression.join(" ");
-    const userAnswer = prompt(`Question: ${question}\nYour answer:`);
+    const userAnswer = isEven(`Question: ${question}\nYour answer:`);
 
     if (userAnswer === null) { 
       console.log("Okay, maybe next time!");
@@ -31,18 +31,15 @@ function brainProgression() {
       continue; 
     }
 
-    if (userAnswerNum.length === hiddenValue.length) {
-      alert("Correct!");
-      correctAnswers++;
+    if (userAnswer.length === correctAnswer.length) {
+      console.log('Correct!');
+      correctAnswersCount += 1;
     } else {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenValue}'.\nLet's try again, ${name}!`
-      );
-      return;
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
     }
   }
 
   console.log(`Congratulations, ${name}!`);
 }
-
 brainProgression();
