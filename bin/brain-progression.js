@@ -4,10 +4,10 @@ import { greetingMessage } from '../src/cli.js';
 
 function brainProgression() {
   const name = greetingMessage();
-  const correctAnswers = 0;
+  let correctAnswersCount = 0;
   const totalQuestions = 3;
 
-  while (correctAnswers < totalQuestions) {
+  while (correctAnswersCount < totalQuestions) {
     const length = Math.floor(Math.random() * 6) + 5;
     const start = Math.floor(Math.random() * 20) + 1;
     const step = Math.floor(Math.random() * 5) + 1;
@@ -32,7 +32,7 @@ function brainProgression() {
       continue;
     }
 
-    if (userAnswer.length === correctAnswer.length) {
+    if (userAnswer.length === correctAnswersCount.length) {
       console.log('Correct!');
       correctAnswersCount += 1;
     } else {

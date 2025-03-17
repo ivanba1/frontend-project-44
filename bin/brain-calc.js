@@ -22,7 +22,7 @@ function brainCalc() {
   console.log('What is the result of the expression?');
 
   const operators = ['+', '-', '*'];
-  const correctAnswersCount = 0;
+  let correctAnswersCount = 0;
 
   while (correctAnswersCount < 3) {
     const num1 = getRandomNumber(1, 20);

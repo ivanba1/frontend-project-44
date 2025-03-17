@@ -6,7 +6,7 @@ function isPrime(number) {
   if (number <= 1) {
     return false;
   }
-  for (let i = 2; i <= Math.sqrt(number); i++) {
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
     if (number % i === 0) {
       return false;
     }
@@ -18,10 +18,10 @@ function brainPrime() {
   const name = greetingMessage();
   console.log('Answer "yes" if the given number is prime. Otherwise answer "no".');
 
-  const correctAnswers = 0;
+  let correctAnswersCount = 0;
   const totalQuestions = 3;
 
-  while (correctAnswers < totalQuestions) {
+  while (correctAnswersCount < totalQuestions) {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
 
@@ -33,8 +33,7 @@ function brainPrime() {
     }
 
     const userAnswerLower = userAnswer.toLowerCase();
-
-    if (userAnswer.length === correctAnswer.length) {
+    if (userAnswerLower.length === correctAnswer.length) {
       console.log('Correct!');
       correctAnswersCount += 1;
     } else {

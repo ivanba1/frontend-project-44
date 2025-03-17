@@ -10,7 +10,7 @@ function braingame() {
   const name = greetingMessage();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  const correctpoint = 0;
+  let correctpoint = 0;
   while (correctpoint < 3) {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     console.log(`Question: ${randomNumber}`);
@@ -19,7 +19,7 @@ function braingame() {
 
     if (userAnswer.length === correctAnswer.length) {
       console.log('Correct!');
-      correctAnswersCount += 1;
+      correctpoint += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
