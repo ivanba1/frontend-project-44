@@ -33,7 +33,7 @@ function brainPrime() {
     }
 
     const userAnswerLower = userAnswer.toLowerCase();
-    if (userAnswerLower.length === correctAnswer.length) {
+    if (userAnswerLower === correctAnswer) {
       console.log('Correct!');
       correctAnswersCount += 1;
     } else {
