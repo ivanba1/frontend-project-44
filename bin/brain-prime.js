@@ -16,7 +16,7 @@ function isPrime(number) {
 
 function brainPrime() {
   const name = greetingMessage();
-  console.log('Answer "yes" if the given number is prime. Otherwise answer "no".');
+  console.log('Answer "yes" if  given number is prime. Otherwise answer "no".');
 
   let correctAnswersCount = 0;
   const totalQuestions = 3;
