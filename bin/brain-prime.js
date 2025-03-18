@@ -26,12 +26,6 @@ function brainPrime() {
     const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
 
     const userAnswer = readlineSync.question(`Question: ${randomNumber}\nYour answer:`);
-
-    if (userAnswer === null) {
-      console.log('Okay, maybe next time!');
-      return;
-    }
-
     const userAnswerLower = userAnswer.toLowerCase();
     if (userAnswerLower === correctAnswer) {
       console.log('Correct!');
