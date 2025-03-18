@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { greetingMessage } from '../src/cli.js';
+import greetingMessage from '../src/cli.js';
 
-function brainProgression() {
+function brainprogression() {
   const name = greetingMessage();
   let correctAnswersCount = 0;
   const totalQuestions = 3;
@@ -27,12 +27,16 @@ function brainProgression() {
     }
 
     const userAnswerNum = parseInt(userAnswer, 10);
+    // eslint-disable-next-line no-restricted-globals
     if (isNaN(userAnswerNum)) {
       console.log('Invalid input. Please enter a number.');
+      // eslint-disable-next-line no-continue
       continue;
     }
 
-    if (userAnswer.length === correctAnswersCount.length) {
+    const correctAnswer = hiddenValue;
+
+    if (userAnswerNum === correctAnswer) {
       console.log('Correct!');
       correctAnswersCount += 1;
     } else {
@@ -43,4 +47,5 @@ function brainProgression() {
 
   console.log(`Congratulations, ${name}!`);
 }
-brainProgression();
+
+brainprogression();

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { greetingMessage } from '../src/cli.js';
+import greetingMessage from '../src/cli.js';
 
 function isEven(number) {
   return number % 2 === 0;

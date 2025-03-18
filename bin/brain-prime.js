@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { greetingMessage } from '../src/cli.js';
+import greetingMessage from '../src/cli.js';
 
 function isPrime(number) {
   if (number <= 1) {

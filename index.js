@@ -1,3 +1,3 @@
-import cli from './src/cli.js';
+import greetingMessage from './src/cli.js';
 
-export default cli;
+export default greetingMessage;

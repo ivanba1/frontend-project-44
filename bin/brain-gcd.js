@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { greetingMessage } from '../src/cli.js';
+import greetingMessage from '../src/cli.js';
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const gcd = (a, b) => {
   while (b) {
-    const temp = b; b = a % b; a = temp;
+    // eslint-disable-next-line no-param-reassign
+    [a, b] = [b, a % b];
   }
   return a;
 };
