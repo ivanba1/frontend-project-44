@@ -4,6 +4,7 @@ import greetingMessage from '../src/cli.js';
 
 function brainprogression() {
   const name = greetingMessage();
+  console.log('What number is missing in the progression?');
   let correctAnswersCount = 0;
   const totalQuestions = 3;
 
@@ -20,20 +21,7 @@ function brainprogression() {
     const question = progression.join(' ');
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-
-    if (userAnswer === null) {
-      console.log('Okay, maybe next time!');
-      return;
-    }
-
     const userAnswerNum = parseInt(userAnswer, 10);
-    // eslint-disable-next-line no-restricted-globals
-    if (isNaN(userAnswerNum)) {
-      console.log('Invalid input. Please enter a number.');
-      // eslint-disable-next-line no-continue
-      continue;
-    }
-
     const correctAnswer = hiddenValue;
 
     if (userAnswerNum === correctAnswer) {
