@@ -34,7 +34,7 @@ function brainCalc() {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer.length === correctAnswer.length) {
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
       correctAnswersCount += 1;
     } else {
